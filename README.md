@@ -23,6 +23,12 @@
 
 2. double click the file circlewar.pyw
 
+# HOW TO PLAY
+
+Move your blue circle by pressing the key w, s, a and d
+Shoot a bomb by clicking on the left button of the mouse
+Beat the red one!
+
 # DOCUMENTATION
 
 see <path-to-this-project>/CircleWar.docx
