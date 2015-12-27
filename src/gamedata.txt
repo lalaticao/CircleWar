@@ -1,0 +1,40 @@
+[Team] : All, Red, Blue, Neutral
+
+#[Circle] : x,y,r,center()
+#move(dx,dy),moveTo(x,y)
+#[GameObject] : x,y,r,center(),  speed(),team
+#move(dx,dy),moveTo(x,y),refreshGraph(camera)
+#[Crisp] : x,y,r,center(),  speed(),team,  armor,defense(),hp(),layer()
+#move(dx,dy),moveTo(x,y),refreshGraph(camera)
+#[Life] : x,y,r,center(),  speed(),team,  armor,defense(),hp(),layer(),  weapon
+#move(dx,dy),moveTo(x,y),refreshGraph(camera)  turnTo(d),makeBomb(camera)
+[Obstacle]           [Human]
+team=Neutral         (team)
+v=0                  v=10
+(r)                  r=30
+equipment.Ostacle    equipment.Human + (armor)
+                     (weapon)
+
+#[Bomb] : x,y,r,center(), speed(),team,  attack,d                    
+#move(dx,dy),moveTo(x,y),refreshGraph(camera)
+[LightBomb]   [HeavyBomb]  [SnipeBomb]
+r=15          r=60         r=5
+v=15          v=15         v=25
+dis=500       dis=300      dis=100000
+attack=60     attack=100   attack=500
+
+#[_Weapon] : weight(),width(),color()
+#makeBomb(x,y,team)
+[LightWeapon]    [HeavyWeapon]    [Snipe]
+LightBomb        HeavyBomb        SnipeBomb
+shoot=0.6        shoot=1          shoot=3
+weight=0         weight=1         weight=3
+color="yellow"   color="black"    color="green"
+width=3          width=6          width=9
+
+#[_Armor] : max_hp(),hp(),defense(),weight()  
+#addHp(),subHP()
+[Obstacle]   [Human]     [LightArmor]  [NormalArmor]  [HeavyArmor]  [Test]
+max_hp=INF   max_hp=100  max_hp=100    max_hp=300     max_hp=500    max_hp=501
+defense=INF  defense=0   defense=20    defense=50     defense=80    defense=0
+weight=INF   weight=0    weight=1      weight=3       weight=5      weight=0
